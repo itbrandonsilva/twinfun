@@ -2,6 +2,8 @@ function a () {
     echo -e "$1" >> "$F";
 }
 
+cd ~/;
+
 F=.vimrc;
 a "set nowrap";
 a "set tabstop=4";
