@@ -12,6 +12,7 @@ function a () {
     ef;
     if ! grep -xq "$1" "$F"
     then
+		echo Appending \""$1"\" to \""$F"\";
         echo -e "$1" >> "$F";
     fi
 }
@@ -24,6 +25,7 @@ a "set tabstop=4";
 a "set shiftwidth=4";
 a "set expandtab";
 a "set hlsearch";
+a "set number";
 # Prevents auto EOFN (End of file newline)
 # a "set binary";
 
