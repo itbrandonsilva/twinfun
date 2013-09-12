@@ -24,6 +24,8 @@ a "set tabstop=4";
 a "set shiftwidth=4";
 a "set expandtab";
 a "set hlsearch";
+# Prevents auto EOFN (End of file newline)
+# a "set binary";
 
 F=~/.tmux.conf;
 a "set -g base-index 1";
