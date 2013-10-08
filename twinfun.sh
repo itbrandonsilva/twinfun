@@ -39,5 +39,9 @@ if type git &> /dev/null; then
     git config --global core.editor vim;
 fi
 
+F=~/.sqliterc;
+a ".headers on";
+a ".mode column";
+
 echo -e "done.";
 echo -e "";
