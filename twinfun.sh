@@ -1,3 +1,11 @@
+#!/bin/bash
+
+if [ "$1" = "init" ]; then
+    apt-get update;
+    apt-get upgrade;
+    apt-get install git vim tmux build-essential cmake-gui;
+fi
+
 # ensure file
 function ef () {
     if [ ! -f "$F" ]
