@@ -20,7 +20,7 @@ function a () {
     ef;
     if ! grep -xq "$1" "$F"
     then
-		echo Appending \""$1"\" to \""$F"\";
+        echo Appending \""$1"\" to \""$F"\";
         echo -e "$1" >> "$F";
     fi
 }
