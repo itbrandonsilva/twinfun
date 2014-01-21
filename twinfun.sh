@@ -5,6 +5,15 @@ if [ "$1" = "init" ]; then
     apt-get update;
     apt-get upgrade;
     apt-get -y install git vim tmux build-essential cmake cmake-gui nautilus-open-terminal;
+
+    # Installing smbfs allows me to execute:
+    #   sudo mount -t cifs //192.168.1.1/share-name/ ~/folder-to-mount-to -o username=username-on-remote-system
+    # so I can cd into a remote share from the terminal.
+    # I can't get write privileges unless I install smbfs.
+    # I don't quite understand why yet.
+    # to unmount:
+    #   sudo umount -l ~/mounted-folder
+    apt-get -y install smbfs;
 fi
 
 # ensure file
