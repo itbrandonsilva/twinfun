@@ -1,9 +1,10 @@
 #!/bin/bash
 
 if [ "$1" = "init" ]; then
+    # Ubuntu 12.04 LTS
     apt-get update;
     apt-get upgrade;
-    apt-get install git vim tmux build-essential cmake-gui;
+    apt-get -y install git vim tmux build-essential cmake cmake-gui nautilus-open-terminal;
 fi
 
 # ensure file
