@@ -4,7 +4,7 @@ if [ "$1" = "init" ]; then
     # Ubuntu 12.04 LTS
     apt-get update;
     apt-get upgrade;
-    apt-get -y install git vim tmux build-essential cmake cmake-gui nautilus-open-terminal;
+    apt-get -y install git vim tmux build-essential cmake cmake-gui nautilus-open-terminal iftop;
 
     # Installing smbfs allows me to execute:
     #   sudo mount -t cifs //192.168.1.1/share-name/ ~/folder-to-mount-to -o username=username-on-remote-system
