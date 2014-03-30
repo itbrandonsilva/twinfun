@@ -2,6 +2,7 @@
 
 if [ "$1" = "init" ]; then
     # Ubuntu 12.04 LTS
+    add-apt-repository http://ppa.launchpad.net/git-core/ppa/ubuntu;
     apt-get update;
     apt-get -y upgrade;
     apt-get -y install git vim tmux build-essential cmake cmake-gui nautilus-open-terminal iftop mesa-utils;
