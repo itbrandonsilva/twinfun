@@ -4,8 +4,8 @@ if [ "$1" = "init" ]; then
     # Ubuntu 12.04 LTS
     add-apt-repository http://ppa.launchpad.net/git-core/ppa/ubuntu;
     apt-get update;
-    apt-get -y upgrade;
-    apt-get -y install git vim tmux build-essential cmake cmake-gui nautilus-open-terminal iftop mesa-utils;
+    apt-get -y --force-yes upgrade;
+    apt-get -y --force-yes install git vim tmux build-essential nautilus-open-terminal iftop;
 
     # Installing smbfs allows me to execute:
     #   sudo mount -t cifs //192.168.1.1/share-name/ ~/folder-to-mount-to -o username=username-on-remote-system
@@ -14,7 +14,7 @@ if [ "$1" = "init" ]; then
     # I don't quite understand why yet.
     # to unmount:
     #   sudo umount -l ~/mounted-folder
-    apt-get -y install smbfs;
+    # apt-get -y install smbfs;
 fi
 
 # ensure file
