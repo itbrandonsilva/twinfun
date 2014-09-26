@@ -5,7 +5,7 @@ if [ "$1" = "init" ]; then
     add-apt-repository http://ppa.launchpad.net/git-core/ppa/ubuntu;
     apt-get update;
     apt-get -y --force-yes upgrade;
-    apt-get -y --force-yes install git vim tmux build-essential nautilus-open-terminal iftop;
+    apt-get -y --force-yes install git vim tmux build-essential iftop;
 
     # Installing smbfs allows me to execute:
     #   sudo mount -t cifs //192.168.1.1/share-name/ ~/folder-to-mount-to -o username=username-on-remote-system
