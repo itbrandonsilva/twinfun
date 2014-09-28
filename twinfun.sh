@@ -1,23 +1,16 @@
 #!/bin/bash
 
 if [ "$1" = "init" ]; then
-    # Ubuntu 12.04 LTS
+    # Ubuntu 14
+
+    # Latest stable git
     add-apt-repository http://ppa.launchpad.net/git-core/ppa/ubuntu;
     apt-get update;
     apt-get -y --force-yes upgrade;
     apt-get -y --force-yes install git vim tmux build-essential iftop;
-
-    # Installing smbfs allows me to execute:
-    #   sudo mount -t cifs //192.168.1.1/share-name/ ~/folder-to-mount-to -o username=username-on-remote-system
-    # so I can cd into a remote share from the terminal.
-    # I can't get write privileges unless I install smbfs.
-    # I don't quite understand why yet.
-    # to unmount:
-    #   sudo umount -l ~/mounted-folder
-    # apt-get -y install smbfs;
 fi
 
-# ensure file
+# ensure file exists
 function ef () {
     if [ ! -f "$F" ]
     then
@@ -26,7 +19,7 @@ function ef () {
     fi
 }
 
-# append
+# append line to file if the line doesn't exist
 function a () {
     ef;
     if ! grep -xq "$1" "$F"
@@ -46,6 +39,7 @@ a "set expandtab";
 a "set hlsearch";
 a "set number";
 # Prevents auto EOFN (End of file newline)
+# ...or does it?
 # a "set binary";
 
 F=~/.tmux.conf;
