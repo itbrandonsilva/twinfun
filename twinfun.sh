@@ -4,7 +4,7 @@
 function ef () {
     if [ ! -f "$F" ]
     then
-        touch "$F"; 
+        touch "$F";
         echo "created file \" $F \"";
     fi
 }
@@ -25,13 +25,16 @@ if [ "$1" = "init" ]; then
     # Latest stable git
     add-apt-repository http://ppa.launchpad.net/git-core/ppa/ubuntu;
 
+    # Atom ppa
+    add-apt-repository ppa:webupd8team/atom
+
     # Latest stable google-chrome
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -;
     sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
     apt-get update;
     apt-get -y --force-yes upgrade;
-    apt-get -y --force-yes install git vim tmux build-essential iftop google-chrome-stable;
+    apt-get -y --force-yes install git vim tmux build-essential iftop google-chrome-stable atom;
     F=~/.bashrc;
     a "alias chrome=google-chrome-stable";
 fi
