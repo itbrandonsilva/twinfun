@@ -48,6 +48,7 @@ a "set shiftwidth=4";
 a "set expandtab";
 a "set hlsearch";
 a "set number";
+a "au BufRead,BufNewFile *.ts set filetype=javascript"
 # Prevents auto EOFN (End of file newline)
 # ...or does it?
 # a "set binary";
