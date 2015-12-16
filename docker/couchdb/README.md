@@ -1,7 +1,8 @@
 # To build the image
 
-Have your couchdb `local.ini` in the same folder as the Dockerfile and run  
-`docker build -t couchdb .`
+Place your couchdb `local.ini` in the same folder as the `Dockerfile` and run  
+`docker build -t couchdb .`  
+You can easily find your current `local.ini` by running `couchdb -c` in your dev environment.
 
 # To run a container
 
