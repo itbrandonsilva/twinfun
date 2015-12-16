@@ -26,7 +26,7 @@ if [ "$1" = "init" ]; then
     add-apt-repository http://ppa.launchpad.net/git-core/ppa/ubuntu;
 
     # Atom ppa
-    add-apt-repository ppa:webupd8team/atom
+    # add-apt-repository ppa:webupd8team/atom
 
     # Latest stable google-chrome
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -;
@@ -34,7 +34,7 @@ if [ "$1" = "init" ]; then
 
     apt-get update;
     apt-get -y --force-yes upgrade;
-    apt-get -y --force-yes install git vim tmux build-essential iftop google-chrome-stable atom meld;
+    apt-get -y --force-yes install git vim tmux build-essential iftop google-chrome-stable meld; # atom
     F=~/.bashrc;
     a "alias chrome=google-chrome-stable";
 fi
