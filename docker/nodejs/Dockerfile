@@ -11,5 +11,15 @@ RUN DEBIAN_FRONTEND=noneinteractive && \
     ln -s node-v5.3.0-linux-x64/bin/npm && \
     mkdir /app && cd /app
 
+COPY ./prepend /usr/local/bin
+RUN chmod +x /usr/local/bin/prepend
+
 EXPOSE 80
-CMD cd /app && npm start
+#CMD cd /app && npm start
+CMD cd /app && bash -c "npm start 2> >(prepend [ERR] >> APP_LOG) 1> >(prepend [OUT] >> APP_LOG)"
+
+# Example start
+# sudo docker run -v $PWD/my-app:/app --restart=on-failure:5 -p 3000:80 -d nodejs
+
+# Start interactively
+# sudo docker run -v $PWD/my-app:/app -p 80:80 -it nodejs /bin/bash
