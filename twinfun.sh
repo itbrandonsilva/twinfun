@@ -42,6 +42,8 @@ if [ "$1" = "init" ]; then
 
     F=~/.bashrc;
     a "alias chrome=google-chrome-stable";
+
+    bash ./bin/setup-node.sh;
 fi
 
 echo -e ""
