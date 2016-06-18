@@ -29,24 +29,25 @@ if [ "$1" = "init" ]; then
     # add-apt-repository ppa:webupd8team/atom
 
     # Latest stable google-chrome
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -;
-    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+    #wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -;
+    #sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
     apt-get update;
     apt-get -y --force-yes upgrade;
     apt-get -y --force-yes install git vim tmux build-essential iftop google-chrome-stable meld; # atom
 
     # Prevents apt-get update warnings
-    sed -i 's/\(deb\)/# \1/' /etc/apt/sources.list.d/google-chrome.list;
-    chattr +i /etc/apt/sources.list.d/google-chrome.list;
-
-    F=~/.bashrc;
-    a "alias chrome=google-chrome-stable";
+    #sed -i 's/\(deb\)/# \1/' /etc/apt/sources.list.d/google-chrome.list;
+    #chattr +i /etc/apt/sources.list.d/google-chrome.list;
 
     bash ./bin/setup-node.sh;
+    bash ./bin/setup-chrome.sh;
 fi
 
 echo -e ""
+
+F=~/.bashrc;
+a "alias chrome=\"google-chrome-stable --disable-gpu\"";
 
 F=~/.vimrc;
 a "set nowrap";
