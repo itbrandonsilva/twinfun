@@ -34,7 +34,7 @@ if [ "$1" = "init" ]; then
 
     apt-get update;
     apt-get -y --force-yes upgrade;
-    apt-get -y --force-yes install git vim tmux build-essential iftop google-chrome-stable meld; # atom
+    apt-get -y --force-yes install git vim tmux build-essential iftop meld; # atom
 
     # Prevents apt-get update warnings
     #sed -i 's/\(deb\)/# \1/' /etc/apt/sources.list.d/google-chrome.list;
